@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   // string interpolation
 
-  acno:any
-  psw:any
+  // acno:any
+  // psw:any
 
   data="Your Perfect Banking Partner"
   // property binding[property_name]="data1"
@@ -22,9 +22,39 @@ userDetails:any={
 
 }
 // methods
-login(){
-  var acnum=this.acno
-  var psw=this.psw
+// login(){
+//   var acnum=this.acno
+//   var psw=this.psw
+//   var userDetails=this.userDetails
+//   // alert('login sucesss')
+//  if(acnum in userDetails ){
+//     if(psw==userDetails[acnum]["password"]){
+//       alert("login sucess")
+//     }
+//     else{
+//       alert("incorrect password")
+//     }
+//   }
+//   else{
+//     alert("incorrect account number")
+//   }
+// }
+
+// acnoChange(event:any){
+//   this.acno=event.target.value
+//   // console.log(this.acno);
+  
+// }
+// pswChange(event:any){
+//   this.psw=event.target.value
+//   // console.log(this.psw);
+  
+// }
+
+
+login(acno:any,psw:any){
+  var acnum=acno.value
+  var psw=psw.value
   var userDetails=this.userDetails
   // alert('login sucesss')
  if(acnum in userDetails ){
@@ -38,16 +68,5 @@ login(){
   else{
     alert("incorrect account number")
   }
-}
-
-acnoChange(event:any){
-  this.acno=event.target.value
-  // console.log(this.acno);
-  
-}
-pswChange(event:any){
-  this.psw=event.target.value
-  // console.log(this.psw);
-  
 }
 }
