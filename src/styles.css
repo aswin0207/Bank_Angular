@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-image:url(./assets/pexels-mikhail-nilov-6969654.jpg);
+    background-size: cover;
+}
+header{
+    color: white;
+}
+footer{
+    color: white;
+    position: fixed;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    bottom: 0;
+}
