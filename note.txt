@@ -77,3 +77,41 @@ html    -view
     1.2.1 - events Binding      (eventname)="method()"
     1.2.2 - $event Binding      (eventname)="method($event)"
     1.2.3 - event binding with template rendering variable   #variableName
+
+
+
+2- Two way Binding
+--------------------
+        2.1 ngModel  [(ngModel)]="variable"
+                -FormsModule  -module used to apply ngModel
+
+path setting in Angular
+-------------------------
+        -path set in root module routing file
+        -each page need dfrnt paths 
+        -landing page path is empty
+
+
+redirection in angular    
+----------------------
+
+method  - navigateByUrl(path)
+class   - Router
+module  - AppRoutingModule
+
+
+folder   - file  - class -methods
+package  - module
+
+Dependency Injection
+--------------------
+
+to use a method of class in another class
+
+in constructor
+
+        accessSpecifier reference:ClassName
+
+        access specifier - privatee / public
+        - private : can use the injection class only in that class
+        - public  : can use the injection class in other classess of that file

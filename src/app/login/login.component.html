@@ -8,14 +8,15 @@
 <div class="sign">
     <form class="container  w-50 mt-5 mb-5"  action="">
         <div class="mt-5  p-4">
-            <input #acno type="text" id="u1" name="uname" [placeholder]="data1" class="form-control">
+            <input [(ngModel)]="acno" type="text" id="u1" name="uname" [placeholder]="data1" class="form-control">
         </div>
         <div class=" p-4 ">
-            <input #psw type="password"  id="p1" name="password" placeholder="Password" class="form-control">
+            <input [(ngModel)]="psw" type="password"  id="p1" name="password" placeholder="Password" class="form-control">
         </div>
         <div class="text-center">
-            <button (click)="login(acno,psw)"  class="container w-25 mb-3  btn btn-outline-primary ">LOGIN</button>
+            <button (click)="login()"  class="container w-25 mb-3  btn btn-outline-primary ">LOGIN</button>
         </div>
+        <p class="mt-2 text-white text-center">Don't have account?<a class="text-warning" style="text-decoration: none;" routerLink="register">Create Account</a></p>
     </form>
 
 </div>
