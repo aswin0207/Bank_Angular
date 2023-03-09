@@ -1,1 +1,19 @@
-<p>register works!</p>
+<h1 class="text-center text-white">Sign In</h1>
+
+<div class="sign">
+    <form class="container  w-50 mt-5 mb-5"  action="">
+        <div class="mt-5  p-4">
+            <input [(ngModel)]="acno"  type="text" id="p1" name="uname" placeholder="ACCOUNT NO" class="form-control">
+        </div>
+        <div class=" p-4 ">
+            <input  [(ngModel)]="uname" name="user" type="text"  id="p2"  placeholder="Username" class="form-control">
+        </div>
+        <div class=" p-4 ">
+            <input  [(ngModel)]="psw" type="password"  id="p3" name="password" placeholder="Password" class="form-control">
+        </div>
+        <div class="text-center">
+            <button (click)="register()" class="container w-25 mb-3  btn btn-outline-primary ">register</button>
+        </div>
+    </form>
+
+</div>

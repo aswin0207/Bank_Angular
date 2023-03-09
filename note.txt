@@ -115,3 +115,11 @@ in constructor
         access specifier - privatee / public
         - private : can use the injection class only in that class
         - public  : can use the injection class in other classess of that file
+
+
+Angular Service 
+----------------
+
+its a file in angular
+all components can access the content of service file
+- create        ng g s filename
