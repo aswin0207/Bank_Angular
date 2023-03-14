@@ -1,0 +1,21 @@
+<h1 style="color: rgb(255, 255, 255);" class="text-center mt-5">Transaction History</h1>
+<div class="container w-50 mt-5 p-3 text-center mt-5"
+style="background-color: rgba(0, 0, 0, 0.247); border-radius: 20px;">
+    <table class="text-center w-100 text-white fs-4">
+        <thead>
+            <tr>
+                <th class="border">TYPE</th>
+                <th class="border">AMOUNT</th>
+            </tr>
+        </thead>
+        <tbody class="border">
+            <tr *ngFor="let i of transactionArray">
+                <td>{{i.Type}}</td>
+                <td>{{i.Amount}}</td>
+            </tr>
+            
+             
+        </tbody>
+    </table>
+
+</div>

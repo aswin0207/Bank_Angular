@@ -123,3 +123,36 @@ Angular Service
 its a file in angular
 all components can access the content of service file
 - create        ng g s filename
+
+
+Angular dierectives
+--------------------
+
+used to manipulate DOM 
+
+1-component dierective
+
+2-structural dierective
+        -*ngFor
+
+3-
+
+
+form validation in Angular
+---------------------------
+
+form Creation in angular
+        1.template driven form
+        2.model driven form
+
+
+Model driven form
+------------------
+
+        -reactive form
+                -ReactiveFormsModule  -module used to build model form
+                -FormBuilder          -it is a class used to build a model
+                -a model contain  -form 
+                                  -array
+                                  -controller
+
