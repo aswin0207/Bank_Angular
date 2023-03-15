@@ -1,15 +1,24 @@
 <h1 class="text-center text-white">Sign In</h1>
 
 <div class="sign">
-    <form class="container  w-50 mt-5 mb-5"  action="">
+    <form [formGroup]="registerForm" class="container  w-50 mt-5 mb-5"  action="">
         <div class="mt-5  p-4">
-            <input [(ngModel)]="acno"  type="text" id="p1" name="uname" placeholder="ACCOUNT NO" class="form-control">
+            <input formControlName="acno"  type="text" id="p1" name="acno" placeholder="ACCOUNT NO" class="form-control">
+        </div>
+        <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched" class="text-start ms-2" >
+            <p class="text-danger">Includes number only</p>
         </div>
         <div class=" p-4 ">
-            <input  [(ngModel)]="uname" name="user" type="text"  id="p2"  placeholder="Username" class="form-control">
+            <input  formControlName="uname" name="user" type="text"  id="p2"  placeholder="Username" class="form-control">
+        </div>
+        <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched" class="text-start ms-2" >
+            <p class="text-danger">includes characters only</p>
         </div>
         <div class=" p-4 ">
-            <input  [(ngModel)]="psw" type="password"  id="p3" name="password" placeholder="Password" class="form-control">
+            <input  formControlName="psw" type="password"  id="p3" name="password" placeholder="Password" class="form-control">
+        </div>
+        <div *ngIf="this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched" class="text-start ms-2" >
+            <p class="text-danger">Includes characters and number only</p>
         </div>
         <div class="text-center">
             <button (click)="register()" class="container w-25 mb-3  btn btn-outline-primary ">register</button>

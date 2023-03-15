@@ -133,7 +133,8 @@ used to manipulate DOM
 1-component dierective
 
 2-structural dierective
-        -*ngFor
+        -*ngFor   -loop
+        -*ngIf    -if  
 
 3-
 
