@@ -157,3 +157,15 @@ Model driven form
                                   -array
                                   -controller
 
+
+
+
+local storage In Angular
+------------------------
+CRUD
+
+C  - localStorage.SetItem()
+R  - localStorage.getItem()
+U  - localStorage.setItem()
+D  - localStorage.removeItem()
+

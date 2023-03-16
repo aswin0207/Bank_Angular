@@ -17,6 +17,18 @@ export class DataService {
 
   constructor() { }
 
+  saveDetails(){
+    if(this.userDetails){
+      localStorage.setItem("userDetails",JSON.stringify(this.userDetails))
+    }
+    if(this.currentUser){
+      localStorage.setItem("currentUser",this.currentUser)
+}
+if(this.currentAcno){
+  localStorage.setItem("currentAcno",JSON.stringify(this.currentAcno))
+}
+  }
+
   register(acno: any, uname: any, psw: any) {
     var userDetails = this.userDetails
     if (acno in userDetails) {
@@ -25,7 +37,7 @@ export class DataService {
     else {
       userDetails[acno] = { username: uname, acno, password: psw, balanace:0,transactions:[]}
       console.log(userDetails);
-
+      this.saveDetails()
       return true
     }
   }
@@ -38,6 +50,7 @@ export class DataService {
         this.currentUser = userDetails[acno]["username"]
 
         this.currentAcno=acno
+        this.saveDetails()
         return true
       }
       else {
@@ -65,7 +78,7 @@ export class DataService {
           Amount:amnt
         })
 
-
+          this.saveDetails()
         return userDetails[acno]["balance"]
       }
       else {
@@ -97,7 +110,7 @@ export class DataService {
           })
   
   
-
+            this.saveDetails()
           return userDetails[acno]["balance"]
         }
         else {

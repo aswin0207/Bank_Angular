@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -10,8 +11,8 @@ import { DataService } from '../services/data.service';
 export class LoginComponent {
   // string interpolation
 
-  acno:any
-  psw:any
+  // acno:any
+  // psw:any
 
   data="Your Perfect Banking Partner"
   // property binding[property_name]="data1"
@@ -24,20 +25,33 @@ export class LoginComponent {
 
 // }
 
-constructor(private router:Router,private ds:DataService){}
+constructor(private router:Router,private ds:DataService,private fb:FormBuilder){}
+
+// model for login form
+loginForm=this.fb.group({
+acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
+psw:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]],
+})
+
+
 // methods
 login(){
-  var acno=this.acno
-  var psw=this.psw
-const result=this.ds.login(acno,psw)
-if (result){
-  alert("login success")
-  this.router.navigateByUrl("dashboard")
-}
-else{
-  alert("incorrect account number or password")
-}
-}
+  var acno=this.loginForm.value.acno
+  var psw=this.loginForm.value.psw
+  if(this.loginForm.valid){
+    const result=this.ds.login(acno,psw)
+    if (result){
+      alert("login success")
+      this.router.navigateByUrl("dashboard")
+    }
+    else{
+      alert("incorrect account number or password")
+    }
+    }
+    else{
+      alert("invalid form")
+    }
+  }
 }
 
 

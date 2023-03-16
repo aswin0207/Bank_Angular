@@ -6,12 +6,18 @@
 <h1 class="text-center text-white">Sign In</h1>
 
 <div class="sign">
-    <form class="container  w-50 mt-5 mb-5"  action="">
+    <form [formGroup]="loginForm" class="container  w-50 mt-5 mb-5"  action="">
         <div class="mt-5  p-4">
-            <input [(ngModel)]="acno" type="text" id="p6" name="uname" [placeholder]="data1" class="form-control">
+            <input formControlName="acno" type="text" id="p6" name="uname" [placeholder]="data1" class="form-control">
+        </div>
+        <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched" class="text-start ms-2" >
+            <p class="text-danger">Includes number only</p>
         </div>
         <div class=" p-4 ">
-            <input [(ngModel)]="psw" type="password"  id="p7" name="password" placeholder="Password" class="form-control">
+            <input formControlName="psw" type="password"  id="p7" name="password" placeholder="Password" class="form-control">
+        </div>
+        <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched" class="text-start ms-2" >
+            <p class="text-danger">Includes characters and number only</p>
         </div>
         <div class="text-center">
             <button (click)="login()" type="submit" class="container w-25 mb-3  btn btn-outline-primary ">LOGIN</button>
@@ -20,3 +26,4 @@
     </form>
 
 </div>
+
