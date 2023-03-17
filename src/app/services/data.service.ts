@@ -7,15 +7,18 @@ export class DataService {
 
   currentUser: any
   currentAcno:any
+  userDetails:any
 
-  userDetails:any = {
-    1000: { username: "anu", acno: 1000, password: "abc123", balance: 0, transactions: [] },
-    1001: { username: "adarsh", acno: 1001, password: "abc123", balance: 0, transactions: [] },
-    1002: { username: "akhil", acno: 1002, password: "abc123", balance: 0, transactions: [] },
-    1003: { username: "ddz", acno: 1003, password: "abc123", balance: 0, transactions: [] },
-  }
+  // userDetails:any = {
+  //   1000: { username: "anu", acno: 1000, password: "abc123", balance: 0, transactions: [] },
+  //   1001: { username: "adarsh", acno: 1001, password: "abc123", balance: 0, transactions: [] },
+  //   1002: { username: "akhil", acno: 1002, password: "abc123", balance: 0, transactions: [] },
+  //   1003: { username: "ddz", acno: 1003, password: "abc123", balance: 0, transactions: [] },
+  // }
 
-  constructor() { }
+  constructor() {
+    this.getDetails()
+   }
 
   saveDetails(){
     if(this.userDetails){
@@ -29,8 +32,20 @@ if(this.currentAcno){
 }
   }
 
+  getDetails(){
+    if(localStorage.getItem("userDetails")){
+      this.userDetails=JSON.parse(localStorage.getItem("userDetails") || "")
+    }
+    if(localStorage.getItem("currentUser")){
+      this.currentUser=localStorage.getItem("currentUser")
+    }
+    if(localStorage.getItem("currentAcno")){
+      this.currentAcno=JSON.parse(localStorage.getItem("currentAcno") || "")
+    }
+  }
+
   register(acno: any, uname: any, psw: any) {
-    var userDetails = this.userDetails
+    var userDetails=this.userDetails
     if (acno in userDetails) {
       return false
     }
@@ -45,9 +60,9 @@ if(this.currentAcno){
   login(acno: any, psw: any) {
     var userDetails = this.userDetails
     if (acno in userDetails) {
-      if (psw == userDetails[acno]["password"]) {
+      if (psw==userDetails[acno]["password"]) {
         //store current user
-        this.currentUser = userDetails[acno]["username"]
+        this.currentUser=userDetails[acno]["username"]
 
         this.currentAcno=acno
         this.saveDetails()

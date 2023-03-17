@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   user:any
   // acno:any
   // psw:any
@@ -21,6 +21,13 @@ export class DashboardComponent {
   constructor(private ds:DataService,private router:Router, private fb:FormBuilder){
     //access data from dataservice and store in a variable
     this.user=this.ds.currentUser
+  }
+
+  ngOnInit():void{
+    if(!localStorage.getItem("currentAcno")){
+      alert("please Login")
+      this.router.navigateByUrl("")
+    }
   }
 
   // model for deposit form
@@ -69,4 +76,11 @@ withdraw(){
   
   }
 }
+
+logOut(){
+  localStorage.removeItem("currentUser")
+  localStorage.removeItem("currentAcno")
+  this.router.navigateByUrl("")
+}
+
 }
