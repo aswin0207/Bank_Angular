@@ -145,3 +145,8 @@ if(this.currentAcno){
   }
  
 }
+
+
+deleteAcc(acno:any){
+  return this.http.delete('')
+}

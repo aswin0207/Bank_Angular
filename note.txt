@@ -169,3 +169,121 @@ R  - localStorage.getItem()
 U  - localStorage.setItem()
 D  - localStorage.removeItem()
 
+child parent communication in Angular
+---------------------------------------
+       parent to child data sharing
+      -----------------------------
+           ->syntax @Input() var:string|undefined -variable initialisation
+           ->@Input- decorator used in parent to child data shareing
+      child to parent data sharing
+      -----------------------------
+           ->
+           ->
+current date and time in Angular
+-------------------------------
+-Date : class used to access current date and time in angular.
+Angular pipes
+------------
+-used to convert datas into another format.
+Event creation in Angular
+-------------------------
+two type of events:
+-inbuild event 
+-userdefined event:-
+    -EventEmitter:- class used to create events.
+        
+              syntax:[@input/output decorator()] eventname=new classname() // event creation
+    -emit():-method to specify when the event happens.
+             
+             syntax: this.eventname.emit()
+BACKEND
+------
+node used to create 
+Serverexpress frame
+Server creation
+---------------
+
+integration forntend to BACKEND
+API creation in Angular
+-----------------------
+HttpClientModule - module for generateing api calls
+HttpClient  - class 
+
+methods in HttpClient
+---------------------
+get
+post
+put
+patch
+delete
+
+asynchronous  in js 
+-------------------
+                -then()
+     promise 
+                -catch()
+asynchronous  in ts 
+-------------------
+=>rxjs(reative extension for js)-library
+   observable      -subscribe()  -resloved
+                   -catch()   -rejected
+
+
+Headers creation in Angular
+--------------------------
+
+HttpHeaders- class used to generate Headers.use headers as reference
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Headers Creation In Angular
+----------------------------
+
+HttpHeaders     - class used to generate Headers
